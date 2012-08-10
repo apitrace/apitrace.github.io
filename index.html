@@ -1,70 +1,379 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Apitrace.github.com by apitrace</title>
+<!DOCTYPE html>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Apitrace.github.com</h1>
-        <p>GitHub pages</p>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
 
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
 
-        <p class="view"><a href="https://github.com/apitrace">View My GitHub Profile</a></p>
+  <title>apitrace</title>
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
 
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
+  <script src="javascripts/modernizr.foundation.js"></script>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+  <style>
+    table.features tbody tr th {
+      font-weight: bold;
+      text-align: left;
+    }
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+    table.features tbody tr td {
+      text-align: center;
+    }
 
-<h3>Designer Templates</h3>
+    .sticky #nav {
+      position:fixed;
+      top: 0;
+    }
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+    div.code {
+      padding: 5px 5px 5px 5px;
+      line-height: 1.2em;
+    }
 
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    span.code {
+      padding: 2px 2px 2px 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="twelve columns">
+      <h2>apitrace</h2>
+      <hr />
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-3224074-7");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+  </div>
 
-  </body>
+  <div class="row">
+    <div class="eight columns">
+      <section id="about">
+        <a name="about"></a>
+        <h3>What is apitrace?</h3>
+        <p>
+          <b>apitrace</b> consists of a set of tools to:
+          <ul class="disc">
+            <li>trace OpenGL, OpenGL ES, Direct3D, and DirectDraw APIs calls to a file.</li>
+            <li>retrace OpenGL and OpenGL ES calls from a file.</li>
+            <li>inspect OpenGL state at any call while retracing.</li>
+            <li>profile performance whilst retracing.</li>
+            <li>visualize and edit trace files.</li>
+          </ul>
+        </p>
+      </section>
+
+      <section id="features">
+        <a name="features"></a>
+        <h3>Features</h3>
+        <table class="features">
+          <thead>
+            <tr>
+              <th></th>
+              <th>OpenGL</th>
+              <th>OpenGL ES</th>
+              <th>Direct3D</th>
+              <th>DirectDraw</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Trace</th>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+            </tr>
+            <tr>
+              <th>Edit Trace</th>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+            </tr>
+            <tr>
+              <th>Retrace</th>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Inspect State</th>
+              <td>&#10004;</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Profile Retrace</th>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="downloads">
+        <a name="downloads"></a>
+        <h3>Downloads</h3>
+        <p>
+          Binary versions of apitrace are available for some platforms however to ensure you have the latest version it is recommended that you compile from source.<br />
+          <ul class="disc">
+            <li><a href="https://github.com/downloads/apitrace/apitrace/apitrace-3.0.20120314-win32.7z">Windows 32 bit</a></li>
+            <li><a href="https://github.com/downloads/apitrace/apitrace/apitrace-3.0.20120314-win64.7z">Windows 64 bit</a></li>
+          </ul>
+        </p>
+      </section>
+
+      <section id="source">
+        <a name="source"></a>
+        <h3>Source</h3>
+      </section>
+
+      <section id="source-acquiring">
+        <h5>Acquiring</h5>
+        <p>
+          <b>apitrace</b> is open-source and is hosted on <a href="https://github.com/apitrace/apitrace">github.</a> It source can be cloned via git:<br />
+          <div class="code panel">
+            git clone git://github.com/apitrace/apitrace.git
+          </div>
+        </p>
+      </section>
+
+      <section id="source-requirements">
+        <h5>Requirements</h5>
+        <p>
+          To compile the requirements for all platforms are:
+          <ul class="disc">
+            <li><a href="http://www.python.org/download/">Python</a> (2.6 or 2.7)</li>
+            <li><a href="http://www.pythonware.com/products/pil/">Python Image Library</a></li>
+          </ul>
+        </p>
+
+        <p>
+          The GUI also depends upon:
+          <ul class="disc">
+            <li><a href="http://qt-project.org/downloads">Qt 4.7</a> (or compatible versions)</li>
+            <li><a href="http://qjson.sourceforge.net/">QJSON</a> version 0.5 or higher (tested with version 0.7.1, which is bundled)</li>
+          </ul>
+        </p>
+
+        <p>
+          Qt and QJSON will be required if -DENABLE_GUI=TRUE is passed to cmake, and never used if -DENABLED_GUI=FALSE is passed instead. The implicit default is -DENABLE_GUI=AUTO, which will build the GUI if Qt is available, using the bundled QJSON if it is not found on the system.
+        </p>
+
+        <p>
+          The code also depends on zlib, libpng, and snappy libraries, but the bundled sources are always used regardless of system availability, to make the wrapper shared-objects/DLL self contained, and to prevent symbol collisions when tracing.
+        </p>
+      </section>
+
+      <section id="source-compile">
+        <h5>Compiling on Linux / Mac OS X</h5>
+        <p>
+          Build as:
+          <div class="code panel">
+            cmake -H. -Bbuild<br/>
+            make -C build
+          </div>
+        </p>
+        <p>
+          You can also build the 32bit GL wrapper on 64bit distro with a multilib gcc by doing:
+          <div class="code panel">
+            cmake -H. -Bbuild32 -DCMAKE_C_FLAGS=-m32 -DCMAKE_CXX_FLAGS=-m32 -DCMAKE_EXE_LINKER_FLAGS=-m32 -DENABLE_GUI=FALSE
+            make -C build32 glxtrace
+          </div>
+        </p>
+
+        <h5>Compiling on Android</h5>
+        <p>
+          Additional Requirements:
+          <ul class="disc">
+            <li><a href="http://developer.android.com/sdk/ndk/index.html">Android NDK</a></li>
+          </ul>
+        </p>
+        <p>
+          Build as:
+          <div class="code panel">
+            export ANDROID_NDK=/path/to/your/ndk<br />
+            cmake -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain/android.toolchain.cmake -DANDROID_API_LEVEL=9 -H. -Bbuild<br />
+            make -C build<br />
+          </div>
+        </p>
+      </section>
+
+        <h5>Compiling on Windows</h5>
+        <p>
+          Additional Requirements:
+        </p>
+
+        <ul class="disc">
+          <li>For Direct3D 11.1 support:
+            <ul>
+              <li><a href="http://www.microsoft.com/download/en/details.aspx?id=27543">Microsoft Visual Studio 11 Ultimate Beta</a></li>
+            </ul>
+          </li>
+
+          <li>Other:
+            <ul>
+              <li>Compiler
+                <ul>
+                  <li>Microsoft Visual Studio (tested with 2010 version)</li>
+                  <li>MinGW (tested with mingw-w64's gcc version 4.6.2)</li>
+                </ul>
+              </li>
+
+              <li>Microsoft DirectX SDK
+                <ul>
+                  <li>for D3D 10, 10.1, and 11 support the June 2010 release is recommended.</li>
+                  <li>for D3D7, D3D8 support the August 2007 release or earlier is required, as later releases do not include the necessary headers.</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>To build with Visual Studio first invoke CMake GUI as:
+          <div class="code panel">
+            cmake-gui -H. -B%cd%\build
+          </div>
+          and press the <i>Configure</i> button.
+        </p>
+        <p>
+          It will try to detect most required/optional dependencies automatically. When not found automatically, you can manually specify the location of the dependencies from the CMake GUI.
+        </p>
+        <p>
+          After you've successfully configured, you can start the build by opening the generated <span class="code panel">build\apitrace.sln</span> solution file, or invoking <span class="code panel">cmake</span> as:
+          <div class="code panel">
+            cmake --build build --config MinSizeRel
+          </div>
+        </p>
+        <p>
+          The steps to build 64bit version are similar, but choosing Visual Studio 10 Win64 instead of Visual Studio 10.
+        </p>
+        <p>
+          It's also possible to instruct <span class="code panel">cmake</span> to build Windows binaries on Linux with MinGW cross compilers.
+        </p>
+      </section>
+
+      <h3>Endorsements</h3>
+      <blockquote>apitrace; the only reason we landed on the moon.<cite>Neil Armstrong and Buzz Aldrin</cite></blockquote>
+      <blockquote>I use this program to help me run the whole of americas, yeehaw<cite>Barack Obama</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
+    </div>
+
+    <div class="four columns">
+      <div id="nav">
+        <ul class="side-nav">
+          <li><a href="#about">apitrace</a></li>
+          <li><a href="#features">features</a></li>
+          <li><a href="#downloads">downloads</a></li>
+          <li><a href="#source">source</a>
+            <ul>
+              <li><a href="#source-acquiring">acquiring</a></li>
+              <li><a href="#source-requirements">requirements</a></li>
+              <li><a href="#source-compile">compiling</a></li>
+            </ul>
+          </li>
+          <li><a href="#">documentation</a></li>
+          <li class="divider"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+
+  <script src="javascripts/waypoints.min.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $.waypoints.settings.scrollThrottle = 30;
+
+    $('#nav').waypoint(function(event, direction) {
+      $(this).parent().toggleClass('sticky', direction === "down");
+      event.stopPropagation();
+    });
+
+  // The same for all waypoints
+  $('body').delegate('section', 'waypoint.reached', function(event, direction) {
+    var $active = $(this);
+
+    if (direction === "up") {
+      $active = $active.prev();
+    }
+    if (!$active.length) $active = $active.end();
+    
+    $('.section-active').removeClass('section-active');
+    $active.addClass('section-active');
+    
+    $('.active').removeClass('active');
+
+    var activeID = $active.attr('id');
+    if (activeID == 'source') {
+      activeID = 'source-acquiring';
+    }
+    $('a[href=#'+activeID+']').parent().addClass('active');
+  });
+  
+
+    $('section').waypoint({ offset: '10%' });
+
+  // Wicked credit to
+  // http://www.zachstronaut.com/posts/2009/01/18/jquery-smooth-scroll-bugs.html
+  var scrollElement = 'html, body';
+  $('html, body').each(function () {
+    var initScrollTop = $(this).attr('scrollTop');
+    $(this).attr('scrollTop', initScrollTop + 1);
+    if ($(this).attr('scrollTop') == initScrollTop + 1) {
+      scrollElement = this.nodeName.toLowerCase();
+      $(this).attr('scrollTop', initScrollTop);
+      return false;
+    }    
+  });
+
+      // Smooth scrolling for internal links
+    $("a[href^='#']").click(function(event) {
+      event.preventDefault();
+      
+      var $this = $(this),
+      target = this.hash,
+      $target = $(target);
+      
+      $(scrollElement).stop().animate({
+        'scrollTop': $target.offset().top
+      }, 500, 'swing', function() {
+        window.location.hash = target;
+      });
+      
+    });
+  });
+  </script>
+</body>
 </html>
