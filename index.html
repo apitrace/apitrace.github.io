@@ -268,20 +268,6 @@
           It's also possible to instruct <span class="code panel">cmake</span> to build Windows binaries on Linux with MinGW cross compilers.
         </p>
       </section>
-
-      <h3>Endorsements</h3>
-      <blockquote>apitrace; the only reason we landed on the moon.<cite>Neil Armstrong and Buzz Aldrin</cite></blockquote>
-      <blockquote>I use this program to help me run the whole of americas, yeehaw<cite>Barack Obama</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
-      <blockquote>The reason we invaded iraq.<cite>Tony Blair</cite></blockquote>
     </div>
 
     <div class="four columns">
@@ -321,44 +307,41 @@
       event.stopPropagation();
     });
 
-  // The same for all waypoints
-  $('body').delegate('section', 'waypoint.reached', function(event, direction) {
-    var $active = $(this);
+    // The same for all waypoints
+    $('body').delegate('section', 'waypoint.reached', function(event, direction) {
+      var $active = $(this);
 
-    if (direction === "up") {
-      $active = $active.prev();
-    }
-    if (!$active.length) $active = $active.end();
-    
-    $('.section-active').removeClass('section-active');
-    $active.addClass('section-active');
-    
-    $('.active').removeClass('active');
+      if (direction === "up") {
+        $active = $active.prev();
+      }
+      if (!$active.length) $active = $active.end();
+      
+      $('.section-active').removeClass('section-active');
+      $active.addClass('section-active');
+      
+      $('.active').removeClass('active');
 
-    var activeID = $active.attr('id');
-    if (activeID == 'source') {
-      activeID = 'source-acquiring';
-    }
-    $('a[href=#'+activeID+']').parent().addClass('active');
-  });
-  
+      var activeID = $active.attr('id');
+      if (activeID == 'source') {
+        activeID = 'source-acquiring';
+      }
+      $('a[href=#'+activeID+']').parent().addClass('active');
+    });
 
     $('section').waypoint({ offset: '10%' });
 
-  // Wicked credit to
-  // http://www.zachstronaut.com/posts/2009/01/18/jquery-smooth-scroll-bugs.html
-  var scrollElement = 'html, body';
-  $('html, body').each(function () {
-    var initScrollTop = $(this).attr('scrollTop');
-    $(this).attr('scrollTop', initScrollTop + 1);
-    if ($(this).attr('scrollTop') == initScrollTop + 1) {
-      scrollElement = this.nodeName.toLowerCase();
-      $(this).attr('scrollTop', initScrollTop);
-      return false;
-    }    
-  });
+    // http://www.zachstronaut.com/posts/2009/01/18/jquery-smooth-scroll-bugs.html
+    var scrollElement = 'html, body';
+    $('html, body').each(function () {
+      var initScrollTop = $(this).attr('scrollTop');
+      $(this).attr('scrollTop', initScrollTop + 1);
+      if ($(this).attr('scrollTop') == initScrollTop + 1) {
+        scrollElement = this.nodeName.toLowerCase();
+        $(this).attr('scrollTop', initScrollTop);
+        return false;
+      }    
+    });
 
-      // Smooth scrolling for internal links
     $("a[href^='#']").click(function(event) {
       event.preventDefault();
       
