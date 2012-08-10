@@ -1,29 +1,22 @@
-/* Artfully masterminded by ZURB  */
+table.features tbody tr th {
+  font-weight: bold;
+  text-align: left;
+}
 
-/* -------------------------------------------------- 
-   Table of Contents
------------------------------------------------------
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
+table.features tbody tr td {
+  text-align: center;
+}
 
+.sticky #nav {
+  position:fixed;
+  top: 0;
+}
 
-/* -----------------------------------------
-   Shared Styles
------------------------------------------ */
+div.code {
+  padding: 5px 5px 5px 5px;
+  line-height: 1.2em;
+}
 
-
-
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
-
-
-
-
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
-
-
+span.code {
+  padding: 2px 2px 2px 2px;
+}

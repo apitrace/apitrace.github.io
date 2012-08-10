@@ -7,13 +7,10 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8" />
-
-  <!-- Set the viewport width to device width for mobile -->
   <meta name="viewport" content="width=device-width" />
-
+  
   <title>apitrace</title>
   
-  <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="stylesheets/foundation.min.css">
   <link rel="stylesheet" href="stylesheets/app.css">
 
@@ -23,31 +20,6 @@
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-
-  <style>
-    table.features tbody tr th {
-      font-weight: bold;
-      text-align: left;
-    }
-
-    table.features tbody tr td {
-      text-align: center;
-    }
-
-    .sticky #nav {
-      position:fixed;
-      top: 0;
-    }
-
-    div.code {
-      padding: 5px 5px 5px 5px;
-      line-height: 1.2em;
-    }
-
-    span.code {
-      padding: 2px 2px 2px 2px;
-    }
-  </style>
 </head>
 <body>
   <div class="row">
@@ -290,73 +262,8 @@
     </div>
   </div>
   
-  <!-- Included JS Files (Compressed) -->
   <script src="javascripts/foundation.min.js"></script>
-  
-  <!-- Initialize JS Plugins -->
-  <script src="javascripts/app.js"></script>
-
   <script src="javascripts/waypoints.min.js"></script>
-
-  <script type="text/javascript">
-  $(document).ready(function() {
-    $.waypoints.settings.scrollThrottle = 30;
-
-    $('#nav').waypoint(function(event, direction) {
-      $(this).parent().toggleClass('sticky', direction === "down");
-      event.stopPropagation();
-    });
-
-    // The same for all waypoints
-    $('body').delegate('section', 'waypoint.reached', function(event, direction) {
-      var $active = $(this);
-
-      if (direction === "up") {
-        $active = $active.prev();
-      }
-      if (!$active.length) $active = $active.end();
-      
-      $('.section-active').removeClass('section-active');
-      $active.addClass('section-active');
-      
-      $('.active').removeClass('active');
-
-      var activeID = $active.attr('id');
-      if (activeID == 'source') {
-        activeID = 'source-acquiring';
-      }
-      $('a[href=#'+activeID+']').parent().addClass('active');
-    });
-
-    $('section').waypoint({ offset: '10%' });
-
-    // http://www.zachstronaut.com/posts/2009/01/18/jquery-smooth-scroll-bugs.html
-    var scrollElement = 'html, body';
-    $('html, body').each(function () {
-      var initScrollTop = $(this).attr('scrollTop');
-      $(this).attr('scrollTop', initScrollTop + 1);
-      if ($(this).attr('scrollTop') == initScrollTop + 1) {
-        scrollElement = this.nodeName.toLowerCase();
-        $(this).attr('scrollTop', initScrollTop);
-        return false;
-      }    
-    });
-
-    $("a[href^='#']").click(function(event) {
-      event.preventDefault();
-      
-      var $this = $(this),
-      target = this.hash,
-      $target = $(target);
-      
-      $(scrollElement).stop().animate({
-        'scrollTop': $target.offset().top
-      }, 500, 'swing', function() {
-        window.location.hash = target;
-      });
-      
-    });
-  });
-  </script>
+  <script src="javascripts/app.js"></script>
 </body>
 </html>
