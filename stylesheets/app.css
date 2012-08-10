@@ -1,6 +1,11 @@
+table.features {
+	width: 100%;
+}
+
 table.features tbody tr th {
   font-weight: bold;
   text-align: left;
+  padding-left: 10px;
 }
 
 table.features tbody tr td {
