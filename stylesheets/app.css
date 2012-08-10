@@ -1,5 +1,9 @@
 table.features {
-	width: 100%;
+  width: 100%;
+}
+
+table.features thead tr th {
+  text-align: center;
 }
 
 table.features tbody tr th {
