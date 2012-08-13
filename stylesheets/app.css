@@ -29,3 +29,8 @@ div.code {
 span.code {
   padding: 2px 2px 2px 2px;
 }
+
+ul.disc li div {
+  padding-left: 10px;
+  text-align: left;
+}

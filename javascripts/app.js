@@ -7,32 +7,6 @@
             event.stopPropagation();
         });
 
-        // The same for all waypoints
-        $('body').delegate('section', 'waypoint.reached', function(event, direction) {
-            var $active = $(this);
-
-            if (direction === "up") {
-                $active = $active.prev();
-            }
-
-            if (!$active.length) {
-                $active = $active.end();
-            }
-
-            $('.active').removeClass('active');
-
-            var id = $active.attr('id');
-            var n = id.indexOf('-');
-            if (n > -1) {
-                var parent = id.substr(0, n);
-                $('a[href=#'+parent+']').parent().addClass('active');
-            }
-
-            $('a[href=#'+id+']').parent().addClass('active');
-        });
-
-        $('section').waypoint({ offset: '10%' });
-
         // http://www.zachstronaut.com/posts/2009/01/18/jquery-smooth-scroll-bugs.html
         var scrollElement = 'html, body';
         $('html, body').each(function () {

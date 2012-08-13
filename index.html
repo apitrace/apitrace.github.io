@@ -24,8 +24,11 @@
 <body>
   <div class="row">
     <div class="twelve columns">
-      <h2>apitrace</h2>
-      <hr />
+      <section id="apitrace">
+        <a name="apitrace"></a>
+        <h2>apitrace</h2>
+        <hr />
+      </section>
     </div>
   </div>
 
@@ -35,20 +38,56 @@
         <a name="about"></a>
         <h3>What is apitrace?</h3>
         <p>
-          <b>apitrace</b> consists of a set of tools to:
+          <strong>apitrace</strong> consists of a set of tools to:
           <ul class="disc">
             <li>trace OpenGL, OpenGL ES, Direct3D, and DirectDraw APIs calls to a file.</li>
-            <li>retrace OpenGL and OpenGL ES calls from a file.</li>
-            <li>inspect OpenGL state at any call while retracing.</li>
-            <li>profile performance whilst retracing.</li>
-            <li>visualize and edit trace files.</li>
+            <li>retrace OpenGL and OpenGL ES calls from a file
+              <div>
+              <!--
+                <a href="images/screenshots/retrace.png"><img src="images/screenshots/thumb/retrace.png" /></a>
+              -->
+              </div>
+            </li>
+            <li>inspect OpenGL state at any call while retracing
+              <div>
+                <a href="images/screenshots/inspect.png"><img src="images/screenshots/thumb/inspect.png" /></a>
+              </div>
+            </li>
+            <li>view framebuffers and textures
+              <div>
+              <!--
+                <a href="images/screenshots/framebuffers.png"><img src="images/screenshots/thumb/framebuffers.png" /></a>
+                <a href="images/screenshots/textures.png"><img src="images/screenshots/thumb/textures.png" /></a>
+              -->
+              </div>
+            </li>
+            <li>view call data
+              <div>
+                <a href="images/screenshots/uniforms.png"><img src="images/screenshots/thumb/uniforms.png" /></a>
+                <a href="images/screenshots/vertex.png"><img src="images/screenshots/thumb/vertex.png" /></a>
+              </div>
+            </li>
+            <li>edit trace files
+              <div>
+                <a href="images/screenshots/shader.edit.png"><img src="images/screenshots/thumb/shader.edit.png" /></a>
+                <a href="images/screenshots/call.edit.png"><img src="images/screenshots/thumb/call.edit.png" /></a>
+              </div>
+            </li>
+            <li>profile performance of traces
+              <div>
+                <a href="images/screenshots/profile.timeline.png"><img src="images/screenshots/thumb/profile.timeline.png" /></a>
+                <a href="images/screenshots/profile.call.png"><img src="images/screenshots/thumb/profile.call.png" /></a>
+              </div>
+            </li>
           </ul>
         </p>
       </section>
+      <hr />
 
       <section id="features">
         <a name="features"></a>
         <h3>Features</h3>
+
         <table class="features">
           <thead>
             <tr>
@@ -119,164 +158,36 @@
           </tbody>
         </table>
       </section>
+      <hr />
 
-      <section id="downloads">
-        <a name="downloads"></a>
-        <h3>Downloads</h3>
+      <section id="download">
+        <a name="download"></a>
+        <h3>Download</h3>
+
         <p>
-          Binary versions of apitrace are available for some platforms however to ensure you have the latest version it is recommended that you compile from source.<br />
-          <ul class="disc">
-            <li><a href="https://github.com/downloads/apitrace/apitrace/apitrace-3.0.20120314-win32.7z">Windows 32 bit</a></li>
-            <li><a href="https://github.com/downloads/apitrace/apitrace/apitrace-3.0.20120314-win64.7z">Windows 64 bit</a></li>
-          </ul>
+          <strong>apitrace</strong> is open-source and is hosted on <a href="https://github.com/apitrace/apitrace">github,</a> the source can be cloned via git. 
+        </p>
+
+        <div class="code panel">
+          git clone git://github.com/apitrace/apitrace.git
+        </div>
+
+        <p>
+          Binary versions of apitrace are available for some platforms from the github <a href="https://github.com/apitrace/apitrace/downloads">download page</a>.
         </p>
       </section>
-
-      <section id="source">
-        <a name="source"></a>
-        <h3>Source</h3>
-      </section>
-
-      <section id="source-downloading">
-        <h5>Downloading</h5>
-        <p>
-          <b>apitrace</b> is open-source and is hosted on <a href="https://github.com/apitrace/apitrace">github.</a> It source can be cloned via git:<br />
-          <div class="code panel">
-            git clone git://github.com/apitrace/apitrace.git
-          </div>
-        </p>
-      </section>
-
-      <section id="source-requirements">
-        <h5>Requirements</h5>
-        <p>
-          To compile the requirements for all platforms are:
-          <ul class="disc">
-            <li><a href="http://www.python.org/download/">Python</a> (2.6 or 2.7)</li>
-            <li><a href="http://www.pythonware.com/products/pil/">Python Image Library</a></li>
-          </ul>
-        </p>
-
-        <p>
-          The GUI also depends upon:
-          <ul class="disc">
-            <li><a href="http://qt-project.org/downloads">Qt 4.7</a> (or compatible versions)</li>
-            <li><a href="http://qjson.sourceforge.net/">QJSON</a> version 0.5 or higher (tested with version 0.7.1, which is bundled)</li>
-          </ul>
-        </p>
-
-        <p>
-          Qt and QJSON will be required if -DENABLE_GUI=TRUE is passed to cmake, and never used if -DENABLED_GUI=FALSE is passed instead. The implicit default is -DENABLE_GUI=AUTO, which will build the GUI if Qt is available, using the bundled QJSON if it is not found on the system.
-        </p>
-
-        <p>
-          The code also depends on zlib, libpng, and snappy libraries, but the bundled sources are always used regardless of system availability, to make the wrapper shared-objects/DLL self contained, and to prevent symbol collisions when tracing.
-        </p>
-      </section>
-
-      <section id="source-compile">
-        <h5>Compiling on Linux / Mac OS X</h5>
-        <p>
-          Build as:
-          <div class="code panel">
-            cmake -H. -Bbuild<br/>
-            make -C build
-          </div>
-        </p>
-        <p>
-          You can also build the 32bit GL wrapper on 64bit distro with a multilib gcc by doing:
-          <div class="code panel">
-            cmake -H. -Bbuild32 -DCMAKE_C_FLAGS=-m32 -DCMAKE_CXX_FLAGS=-m32 -DCMAKE_EXE_LINKER_FLAGS=-m32 -DENABLE_GUI=FALSE
-            make -C build32 glxtrace
-          </div>
-        </p>
-
-        <h5>Compiling on Android</h5>
-        <p>
-          Additional Requirements:
-          <ul class="disc">
-            <li><a href="http://developer.android.com/sdk/ndk/index.html">Android NDK</a></li>
-          </ul>
-        </p>
-        <p>
-          Build as:
-          <div class="code panel">
-            export ANDROID_NDK=/path/to/your/ndk<br />
-            cmake -DCMAKE_TOOLCHAIN_FILE=cmake/toolchain/android.toolchain.cmake -DANDROID_API_LEVEL=9 -H. -Bbuild<br />
-            make -C build<br />
-          </div>
-        </p>
-      </section>
-
-        <h5>Compiling on Windows</h5>
-        <p>
-          Additional Requirements:
-        </p>
-
-        <ul class="disc">
-          <li>For Direct3D 11.1 support:
-            <ul>
-              <li><a href="http://www.microsoft.com/download/en/details.aspx?id=27543">Microsoft Visual Studio 11 Ultimate Beta</a></li>
-            </ul>
-          </li>
-
-          <li>Other:
-            <ul>
-              <li>Compiler
-                <ul>
-                  <li>Microsoft Visual Studio (tested with 2010 version)</li>
-                  <li>MinGW (tested with mingw-w64's gcc version 4.6.2)</li>
-                </ul>
-              </li>
-
-              <li>Microsoft DirectX SDK
-                <ul>
-                  <li>for D3D 10, 10.1, and 11 support the June 2010 release is recommended.</li>
-                  <li>for D3D7, D3D8 support the August 2007 release or earlier is required, as later releases do not include the necessary headers.</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-
-        <p>To build with Visual Studio first invoke CMake GUI as:
-          <div class="code panel">
-            cmake-gui -H. -B%cd%\build
-          </div>
-          and press the <i>Configure</i> button.
-        </p>
-        <p>
-          It will try to detect most required/optional dependencies automatically. When not found automatically, you can manually specify the location of the dependencies from the CMake GUI.
-        </p>
-        <p>
-          After you've successfully configured, you can start the build by opening the generated <span class="code panel">build\apitrace.sln</span> solution file, or invoking <span class="code panel">cmake</span> as:
-          <div class="code panel">
-            cmake --build build --config MinSizeRel
-          </div>
-        </p>
-        <p>
-          The steps to build 64bit version are similar, but choosing Visual Studio 10 Win64 instead of Visual Studio 10.
-        </p>
-        <p>
-          It's also possible to instruct <span class="code panel">cmake</span> to build Windows binaries on Linux with MinGW cross compilers.
-        </p>
-      </section>
+      <hr />
     </div>
 
     <div class="four columns">
       <div id="nav">
         <ul class="side-nav">
-          <li><a href="#about">apitrace</a></li>
+          <li class="active"><a href="#apitrace">apitrace</a></li>
+          <li><a href="#about">about</a></li>
           <li><a href="#features">features</a></li>
-          <li><a href="#downloads">downloads</a></li>
-          <li><a href="#source">source</a>
-            <ul>
-              <li><a href="#source-downloading">downloading</a></li>
-              <li><a href="#source-requirements">requirements</a></li>
-              <li><a href="#source-compile">compiling</a></li>
-            </ul>
-          </li>
-          <li><a href="#">documentation</a></li>
+          <li><a href="#download">download</a>
+          <li><a href="https://github.com/apitrace/apitrace">github</a>
+          <li><a href="https://github.com/apitrace/apitrace#basic-usage">documentation</a>
           <li class="divider"></li>
         </ul>
       </div>
