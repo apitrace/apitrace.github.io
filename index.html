@@ -189,55 +189,125 @@
           <li><p><a href="http://jrfonseca.blogspot.com/2008/07/tracing-d3d-applications.html">Jose's Fonseca blog introducing the tool</a></p></li>
         </ul>
         
-        <h4><a name="direct3d" class="anchor" href="#direct3d"><span class="mini-icon mini-icon-link"></span></a>Direct3D</h4>
+        <table class="features">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>APIs</th>
+              <th>OSes</th>
+              <th>Open<br/>source</th>
+              <th>Last<br/>updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><a href="http://www.mikoweb.eu/index.php?node=21">Proxy DLL</a></th>
+              <td><a href="http://www.codeguru.com/cpp/g-m/directx/directx8/article.php/c11453/">D3D8</a> <a href="http://graphics.stanford.edu/%7Emdfisher/D3D9Interceptor.html">D3D9</a></td>
+              <td>Windows</td>
+              <td>&#10004;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://graphics.stanford.edu/%7Emdfisher/D3D9Interceptor.html">Direct3D 9 API Interceptor</a></th>
+              <td>D3D9</td>
+              <td>Windows</td>
+              <td>&#10004;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://msdn.microsoft.com/en-us/library/hh873126.aspx">Visual Studio 2012</a></th>
+              <td>D3D9 to D3D11.1</td>
+              <td>Windows</td>
+              <td>&#10005;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://blogs.msdn.com/b/manders/archive/2006/12/15/a-painless-introduction-to-pix-for-windows.aspx">Microsoft PIX</a></th>
+              <td>D3D9 to D3D11</td>
+              <td>Windows</td>
+              <td>&#10005;</td>
+              <td>Replaced by Visual Studio 2012</td>
+            </tr>
+            <tr>
+              <th><a href="http://doc.51windows.net/Directx9_SDK/?url=/directx9_sdk/graphics/programmingguide/TutorialsAndSamplesAndToolsAndTips/Tools/D3DSpy.htm">D3DSpy</a></th>
+              <td>D3D9</td>
+              <td>Windows</td>
+              <td>&#10005;</td>
+              <td>Replaced by Pix</td>
+            </tr>
+            <tr>
+              <th><a href="http://developer.nvidia.com/content/nvidia-nsight-visual-studio-edition">NVIDIA Nsight</a></th>
+              <td>D3D9 to D3D11</td>
+              <td>Windows</td>
+              <td>&#10005;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://developer.amd.com/tools/gpu/PerfStudio/Pages/default.aspx">AMD GPU PerfStudio</a></th>
+              <td>OpenGL, D3D9 to D3D11</td>
+              <td>Windows</td>
+              <td>&#10005;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://www.intel.com/software/gpa/">Intel Graphics Performance Analyzers</a></th>
+              <td>OpenGL, OpenGL&nbsp;ES, D3D9-11</td>
+              <td>Windows, Linux</td>
+              <td>&#10005;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://www.opengl.org/sdk/tools/BuGLe/">BuGLe</a></th>
+              <td>OpenGL</td>
+              <td>Linux</td>
+              <td>&#10004;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://code.google.com/p/glintercept/">GLIntercept</a></th>
+              <td>OpenGL</td>
+              <td>Windows</td>
+              <td>&#10004;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="https://gitorious.org/tracy">tracy</a></th>
+              <td>OpenGL&nbsp;ES, OpenVG</td>
+              <td>Windows, Linux</td>
+              <td>&#10004;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://benvanik.github.com/WebGL-Inspector/">WebGL-Inspector</a></th>
+              <td>WebGL</td>
+              <td>any</td>
+              <td>&#10004;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://developer.amd.com/tools/hc/CodeXL/Pages/default.aspx">AMD CodeXL</a></th>
+              <td>OpenGL, OpenCL</td>
+              <td>Windows, Linux</td>
+              <td>&#10005;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://www.gremedy.com/products.php">gDEBugger</a></th>
+              <td>OpenGL, OpenCL</td>
+              <td>Windows, Linux, Mac</td>
+              <td>&#10005;</td>
+              <td>Acquired by <a href="http://developer.amd.com/tools/gDEBugger/Pages/default.aspx">AMD</a></td>
+            </tr>
+            <tr>
+              <th><a href="http://cumbia.informatik.uni-stuttgart.de/glsldevil/index.html">glslDevil</a></th>
+              <td>OpenGL</td>
+              <td>Windows</td>
+              <td>&#10005;</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
 
-        <p>Open-source:</p>
-
-        <ul class="disc">
-          <li>
-          <p><a href="http://www.mikoweb.eu/index.php?node=21">Proxy DLL</a></p>
-          <ul class="disc">
-            <li><a href="http://www.codeguru.com/cpp/g-m/directx/directx8/article.php/c11453/">Intercept Calls to DirectX with a Proxy DLL</a></li>
-          </ul>
-          </li>
-          <li><p><a href="http://graphics.stanford.edu/%7Emdfisher/D3D9Interceptor.html">Direct3D 9 API Interceptor</a></p></li>
-        </ul>
-        
-        <p>Closed-source:</p>
-
-        <ul class="disc">
-          <li>
-          <p><a href="http://msdn.microsoft.com/en-us/library/ee417062.aspx">Microsoft PIX</a></p>
-
-          <ul class="disc">
-            <li>
-            <a href="http://doc.51windows.net/Directx9_SDK/?url=/directx9_sdk/graphics/programmingguide/TutorialsAndSamplesAndToolsAndTips/Tools/D3DSpy.htm">D3DSpy</a>: the predecessor of PIX</li>
-            </ul>
-          </li>
-          <li><p><a href="http://developer.nvidia.com/nvidia-perfkit">NVIDIA PerfKit</a></p></li>
-          <li><p><a href="http://developer.amd.com/gpu/PerfStudio/pages/APITraceWindow.aspx">AMD GPU PerfStudio</a></p></li>
-          <li><p><a href="http://www.intel.com/software/gpa/">Intel Graphics Performance Analyzers</a></p></li>
-        </ul>
-        
-        <h4><a name="opengl" class="anchor" href="#opengl"><span class="mini-icon mini-icon-link"></span></a>OpenGL</h4>
-
-        <p>Open-source:</p>
-
-        <ul class="disc">
-          <li><p><a href="http://www.opengl.org/sdk/tools/BuGLe/">BuGLe</a></p></li>
-          <li><p><a href="http://code.google.com/p/glintercept/">GLIntercept</a></p></li>
-          <li><p><a href="https://gitorious.org/tracy">tracy</a>: OpenGL ES and OpenVG trace, retrace, and state inspection</p></li>
-          <li><p><a href="http://benvanik.github.com/WebGL-Inspector/">WebGL-Inspector</a></p></li>
-        </ul>
-        
-        <p>Closed-source:</p>
-
-        <ul class="disc">
-          <li><p><a href="http://developer.amd.com/tools/hc/CodeXL/Pages/default.aspx">AMD CodeXL</a></p></li>
-          <li><p><a href="http://developer.amd.com/gpu/PerfStudio/pages/APITraceWindow.aspx">AMD GPU PerfStudio</a></p></li>
-          <li><p><a href="http://www.gremedy.com/products.php">gDEBugger</a> and <a href="http://developer.amd.com/tools/gDEBugger/Pages/default.aspx">AMD gDEBugger</a></p></li>
-          <li><p><a href="http://cumbia.informatik.uni-stuttgart.de/glsldevil/index.html">glslDevil</a></p></li>
-        </ul>
       </section>
     </div>
 
