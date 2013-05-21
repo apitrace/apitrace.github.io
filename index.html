@@ -215,136 +215,166 @@
         <h3>Links</h3>
 
         <table class="features">
-          <caption>Similar/related tools</caption>
+          <caption>Similar/related open-source tools</caption>
           <thead>
             <tr>
               <th>Tool</th>
               <th>APIs</th>
               <th>OSes</th>
-              <th>Open<br/>source</th>
               <th>Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th><a href="http://www.mikoweb.eu/index.php?node=21">Proxy DLL</a></th>
-              <td>D3D8, D3D9</a></td>
-              <td>Windows</td>
-              <td>&#10004;</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th><a href="http://graphics.stanford.edu/%7Emdfisher/D3D9Interceptor.html">Direct3D 9 API Interceptor</a></th>
-              <td>D3D9</td>
-              <td>Windows</td>
-              <td>&#10004;</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th><a href="http://msdn.microsoft.com/en-us/library/hh315751.aspx">Visual Studio Graphics Debugger</a></th>
-              <td>D3D9 to D3D11.1</td>
-              <td>Windows</td>
-              <td>&#10005;</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th><a href="http://blogs.msdn.com/b/manders/archive/2006/12/15/a-painless-introduction-to-pix-for-windows.aspx">Microsoft PIX</a></th>
-              <td>D3D9 to D3D11</td>
-              <td>Windows</td>
-              <td>&#10005;</td>
-              <td><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ee663275.aspx">Replaced</a> by Visual Studio Graphics Debugger</td>
-            </tr>
-            <tr>
-              <th><a href="http://doc.51windows.net/Directx9_SDK/?url=/directx9_sdk/graphics/programmingguide/TutorialsAndSamplesAndToolsAndTips/Tools/D3DSpy.htm">D3DSpy</a></th>
-              <td>D3D9</td>
-              <td>Windows</td>
-              <td>&#10005;</td>
-              <td>Replaced by PIX</td>
-            </tr>
-            <tr>
-              <th><a href="http://developer.nvidia.com/content/nvidia-nsight-visual-studio-edition">NVIDIA Nsight</a></th>
-              <td>D3D9 to D3D11</td>
-              <td>Windows</td>
-              <td>&#10005;</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th><a href="http://developer.amd.com/tools/gpu/PerfStudio/Pages/default.aspx">AMD GPU PerfStudio</a></th>
-              <td>OpenGL, D3D9 to D3D11</td>
-              <td>Windows</td>
-              <td>&#10005;</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th><a href="http://www.intel.com/software/gpa/">Intel Graphics Performance Analyzers</a></th>
-              <td>OpenGL, OpenGL&nbsp;ES, D3D9-11</td>
-              <td>Windows, Linux</td>
-              <td>&#10005;</td>
-              <td></td>
-            </tr>
-            <tr>
               <th><a href="http://www.opengl.org/sdk/tools/BuGLe/">BuGLe</a></th>
               <td>OpenGL</td>
               <td>Linux</td>
-              <td>&#10004;</td>
               <td></td>
             </tr>
             <tr>
               <th><a href="http://code.google.com/p/glintercept/">GLIntercept</a></th>
               <td>OpenGL</td>
               <td>Windows</td>
-              <td>&#10004;</td>
-              <td></td>
-            </tr>
-            <tr>
-              <th><a href="https://gitorious.org/tracy">tracy</a></th>
-              <td>OpenGL&nbsp;ES, OpenVG</td>
-              <td>Windows, Linux</td>
-              <td>&#10004;</td>
               <td></td>
             </tr>
             <tr>
               <th><a href="http://benvanik.github.com/WebGL-Inspector/">WebGL-Inspector</a></th>
               <td>WebGL</td>
               <td>any</td>
-              <td>&#10004;</td>
               <td></td>
             </tr>
             <tr>
-              <th><a href="http://developer.amd.com/tools/hc/CodeXL/Pages/default.aspx">AMD CodeXL</a></th>
+              <th><a href="https://github.com/XenonofArcticus/GLSL-Debugger">GLSL-Debugger</a></th>
+              <td>OpenGL</td>
+              <td>Windows, Linux</td>
+              <td>previously known as <a href="http://cumbia.informatik.uni-stuttgart.de/glsldevil/index.html">glslDevil</a></td>
+            </tr>
+            <tr>
+              <th><a href="https://gitorious.org/tracy">tracy</a></th>
+              <td>OpenGL&nbsp;ES, OpenVG</td>
+              <td>Windows, Linux</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://graphics.stanford.edu/%7Emdfisher/D3D9Interceptor.html">Direct3D 9 API Interceptor</a></th>
+              <td>D3D9</td>
+              <td>Windows</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><a href="http://www.mikoweb.eu/index.php?node=21">Proxy DLL</a></th>
+              <td>D3D8, D3D9</a></td>
+              <td>Windows</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="features">
+          <caption>ISV tools</caption>
+          <thead>
+            <tr>
+              <th>Vendor</th>
+              <th>Tool</th>
+              <th>APIs</th>
+              <th>OSes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Microsoft</th>
+              <th><a href="http://msdn.microsoft.com/en-us/library/hh315751.aspx">Visual Studio Graphics Debugger</a></th>
+              <td>D3D9 to D3D11.1</td>
+              <td>Windows</td>
+            </tr>
+            <tr>
+              <!-- http://blog.manbolo.com/2012/11/20/using-xcode-opengl-es-frame-capture -->
+              <th>Apple</th>
+              <th><a href="http://developer.apple.com/library/ios/#documentation/DeveloperTools/Conceptual/WhatsNewXcode/Articles/xcode_4_2.html#//apple_ref/doc/uid/00200-SW1">Xcode OpenGL ES Frame Capture</a></th>
+              <td>OpenGL&nbsp;ES</td>
+              <td>iOS</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="features">
+          <caption>IHV tools</caption>
+          <thead>
+            <tr>
+              <th>Vendor</th>
+              <th>Tool</th>
+              <th>APIs</th>
+              <th>OSes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>NVIDIA</th>
+              <th><a href="http://www.nvidia.com/object/nsight.html">Nsight</a></th>
+              <td>D3D9 to D3D11</td>
+              <td>Windows</td>
+            </tr>
+            <tr>
+              <th>AMD</th>
+              <th><a href="http://developer.amd.com/tools/hc/CodeXL/Pages/default.aspx">CodeXL</a></th>
               <td>OpenGL, OpenCL</td>
               <td>Windows, Linux</td>
-              <td>&#10005;</td>
-              <td></td>
+            </tr>
+            <tr>
+              <th>AMD</th>
+              <th><a href="http://developer.amd.com/tools/gpu/PerfStudio/Pages/default.aspx">GPU PerfStudio</a></th>
+              <td>OpenGL, D3D9 to D3D11</td>
+              <td>Windows</td>
+            </tr>
+            <tr>
+              <th>Intel</th>
+              <th><a href="http://www.intel.com/software/gpa/">Graphics Performance Analyzers</a></th>
+              <td>OpenGL, OpenGL&nbsp;ES, D3D9-11</td>
+              <td>Windows, Linux</td>
+            </tr>
+            <tr>
+              <th>Imagination</th>
+              <th><a href="http://www.imgtec.com/powervr/insider/pvrtrace.asp">PVRTrace</a></th>
+              <td>OpenGL&nbsp;ES</td>
+              <td>Linux, Android</td>
+            </tr>
+            <tr>
+              <th>ARM</th>
+              <th><a href="http://malideveloper.arm.com/develop-for-mali/tools/mali-graphics-debugger/">Mali Graphics Debugger</a></th>
+              <td>OpenGL&nbsp;ES, OpenCL</td>
+              <td>Linux, Android</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="features">
+          <caption>Discontinued tools</caption>
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>APIs</th>
+              <th>OSes</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th><a href="http://doc.51windows.net/Directx9_SDK/?url=/directx9_sdk/graphics/programmingguide/TutorialsAndSamplesAndToolsAndTips/Tools/D3DSpy.htm">D3DSpy</a></th>
+              <td>D3D9</td>
+              <td>Windows</td>
+              <td>replaced by PIX</td>
+            </tr>
+            <tr>
+              <th><a href="http://blogs.msdn.com/b/manders/archive/2006/12/15/a-painless-introduction-to-pix-for-windows.aspx">PIX</a></th>
+              <td>D3D9 to D3D11</td>
+              <td>Windows</td>
+              <td><a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ee663275.aspx">replaced by Visual Studio Graphics Debugger</a></td>
             </tr>
             <tr>
               <th><a href="http://www.gremedy.com/products.php">gDEBugger</a></th>
               <td>OpenGL, OpenCL</td>
               <td>Windows, Linux, Mac</td>
-              <td>&#10005;</td>
-              <td>Acquired by <a href="http://developer.amd.com/tools/gDEBugger/Pages/default.aspx">AMD</a></td>
-            </tr>
-            <tr>
-              <th><a href="http://cumbia.informatik.uni-stuttgart.de/glsldevil/index.html">glslDevil</a></th>
-              <td>OpenGL</td>
-              <td>Windows, Linux</td>
-              <td>&#10004;</td>
-              <td>Open sourced as <a href="https://github.com/XenonofArcticus/GLSL-Debugger">GLSL-Debugger</a></td>
-            </tr>
-            <tr>
-              <th><a href="http://www.imgtec.com/powervr/insider/pvrtrace.asp">PVRTrace</a></th>
-              <td>OpenGL&nbsp;ES</td>
-              <td>Linux, Android</td>
-              <td>&#10005;</td>
-              <td></td>
-            </tr>
-            <tr>
-              <!-- http://blog.manbolo.com/2012/11/20/using-xcode-opengl-es-frame-capture -->
-              <th><a href="http://developer.apple.com/library/ios/#documentation/DeveloperTools/Conceptual/WhatsNewXcode/Articles/xcode_4_2.html#//apple_ref/doc/uid/00200-SW1">Xcode OpenGL ES Frame Capture</a></th>
-              <td>OpenGL&nbsp;ES</td>
-              <td>iOS</td>
-              <td>&#10005;</td>
-              <td></td>
+              <td><a href="http://developer.amd.com/tools/gDEBugger/Pages/default.aspx">acquired by AMD, replaced by CodeXL</a></td>
             </tr>
           </tbody>
         </table>
