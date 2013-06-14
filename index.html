@@ -40,36 +40,36 @@
         <p>
           <strong>apitrace</strong> consists of a set of tools to:
           <ul class="disc">
-            <li>trace OpenGL, OpenGL ES, Direct3D, and DirectDraw APIs calls to a file.</li>
-            <li>replay OpenGL and OpenGL ES calls from a file
+            <li>trace OpenGL, OpenGL ES, Direct3D, and DirectDraw APIs calls to a file;</li>
+            <li>replay the recorded calls from a file, on any machine and, for OpenGL and OpenGL ES, on any operating system;
               <div>
                 <a href="images/screenshots/replay.png"><img src="images/screenshots/thumb/replay.png" /></a>
               </div>
             </li>
-            <li>inspect OpenGL state at any call while replaying
+            <li>inspect state at any call while replaying;
               <div>
                 <a href="images/screenshots/inspect.png"><img src="images/screenshots/thumb/inspect.png" /></a>
               </div>
             </li>
-            <li>view framebuffers and textures
+            <li>view framebuffers and textures;
               <div>
                 <a href="images/screenshots/framebuffers.png"><img src="images/screenshots/thumb/framebuffers.png" /></a>
                 <a href="images/screenshots/textures.png"><img src="images/screenshots/thumb/textures.png" /></a>
               </div>
             </li>
-            <li>view call data
+            <li>view call data;
               <div>
                 <a href="images/screenshots/uniforms.png"><img src="images/screenshots/thumb/uniforms.png" /></a>
                 <a href="images/screenshots/vertex.png"><img src="images/screenshots/thumb/vertex.png" /></a>
               </div>
             </li>
-            <li>edit trace files
+            <li>edit trace files;
               <div>
                 <a href="images/screenshots/shader.edit.png"><img src="images/screenshots/thumb/shader.edit.png" /></a>
                 <a href="images/screenshots/call.edit.png"><img src="images/screenshots/thumb/call.edit.png" /></a>
               </div>
             </li>
-            <li>profile performance of traces
+            <li>profile performance of traces;
               <div>
                 <a href="images/screenshots/profile.timeline.png"><img src="images/screenshots/thumb/profile.timeline.png" /></a>
                 <a href="images/screenshots/profile.histogram.png"><img src="images/screenshots/thumb/profile.histogram.png" /></a>
@@ -88,6 +88,7 @@
         <h3>Features</h3>
 
         <table class="features">
+          <caption>API support matrix</caption>
           <thead>
             <tr>
               <th>API</th>
@@ -160,6 +161,44 @@
               <td></td>
               <td></td>
               <td></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <table class="features">
+          <caption>OS support matrix</caption>
+          <thead>
+            <tr>
+              <th>OS</th>
+              <th>Trace</th>
+              <th>CLI</th>
+              <th>GUI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Android</th>
+              <td>&#10004;</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Linux</th>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+            </tr>
+            <tr>
+              <th>OS X</th>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+            </tr>
+            <tr>
+              <th>Windows</th>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
+              <td>&#10004;</td>
             </tr>
           </tbody>
         </table>
@@ -373,7 +412,7 @@
             <tr>
               <th><a href="http://www.gremedy.com/products.php">gDEBugger</a></th>
               <td>OpenGL, OpenCL</td>
-              <td>Windows, Linux, Mac</td>
+              <td>Windows, Linux, OS X</td>
               <td><a href="http://developer.amd.com/tools/gDEBugger/Pages/default.aspx">acquired by AMD, replaced by CodeXL</a></td>
             </tr>
           </tbody>
