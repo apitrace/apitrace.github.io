@@ -59,9 +59,7 @@ dl_ () {
 }
 
 dl_ apitrace-ubuntu-18.04 apitrace-latest-Linux.tar.bz2
-#dl_ apitrace-ubuntu-arm64 apitrace-latest-Linux-arm64.tar.bz2
-#dl_ apitrace-win32 apitrace-latest-win32.7z
-#dl_ apitrace-win64 apitrace-latest-win64.7z
+dl_ apitrace-ubuntu-arm64 apitrace-latest-Linux-arm64.tar.bz2
 dl_ apitrace-win32-x86 apitrace-latest-win32.7z
 dl_ apitrace-win64-x86 apitrace-latest-win64.7z
 dl_ apitrace-win64-arm apitrace-latest-win64-arm.7z
