@@ -58,7 +58,7 @@ dl_ () {
     mv .$name.zip $name.zip
 }
 
-dl_ apitrace-ubuntu-18.04 apitrace-latest-Linux.tar.bz2
+dl_ apitrace-ubuntu-20.04 apitrace-latest-Linux.tar.bz2
 dl_ apitrace-ubuntu-arm64 apitrace-latest-Linux-arm64.tar.bz2
 dl_ apitrace-win32-x86 apitrace-latest-win32.7z
 dl_ apitrace-win64-x86 apitrace-latest-win64.7z
