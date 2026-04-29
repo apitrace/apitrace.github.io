@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -eu -o pipefail
 
 owner="apitrace"
 repo="apitrace"
@@ -12,7 +12,11 @@ branch=master
 # https://stackoverflow.com/a/65163515
 
 # Needs public_repo 
-token="$GITHUB_TOKEN"
+if [[ ! -v GITHUB_TOKEN ]]
+then
+    echo 'error: must set GITHUB_TOKEN to a https://github.com/settings/personal-access-tokens with "Public repositories"' 1>&2
+    exit 1
+fi
 
 jq=$(which jq)
 
@@ -22,12 +26,23 @@ jq_ () {
 
 curl_ () {
     echo "Requesting $@" 1>&2
-    curl -s \
+    tmp=$(mktemp)
+    if curl -s --fail-with-body \
         -H "Accept: application/vnd.github.v3+json" \
-        -H "Authorization: token $token" \
-        "$@"
+        -H "Authorization: token $GITHUB_TOKEN" \
+        "$@" \
+    | tee $tmp
+    then
+        rm -f $tmp
+    else
+        message=$(jq_ -r '.message' $tmp)
+        echo "error: $message" 1>&2
+        rm -f $tmp
+        exit 1
+    fi
 }
 
+# TODO: Wait for the last?
 curl_ "https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow}.yml/runs?per_page=1&branch=${branch}&event=push&status=success" > workflow.json
 
 # https://docs.github.com/en/rest/reference/actions#list-artifacts-for-a-repository
@@ -50,7 +65,11 @@ dl_ () {
 
     echo "Downloading ${archive_download_url}" 1>&2
     # XXX: Use -H 'Accept: application/octet-stream' ?
-    curl -s -L -H "Authorization: token $token" -z $name.zip -o .$name.zip ${archive_download_url}
+    if ! curl -s --fail -L -H "Authorization: token $GITHUB_TOKEN" -z $name.zip -o .$name.zip ${archive_download_url}
+    then
+        echo "error: failed to download ${archive_download_url}" 1>&2
+        exit 1
+    fi
 
     echo "Extracting $file from artifact $name" 1>&2
     unzip -q -o .$name.zip $file -d _site/download
