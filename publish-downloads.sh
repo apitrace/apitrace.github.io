@@ -42,15 +42,16 @@ curl_ () {
     fi
 }
 
-# TODO: Wait for the last?
-curl_ "https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow}.yml/runs?per_page=1&branch=${branch}&event=push&status=success" > workflow.json
+# https://docs.github.com/en/rest/actions/workflow-runs#list-workflow-runs-for-a-repository
+# NOTE: an unsorted and random sample of runs is returned
+since=$(date -u -d '30 days ago' +%Y-%m-%d)
+curl_ "https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflow}.yml/runs?branch=${branch}&event=push&status=success&created=>=${since}" > workflows.json
 
-# https://docs.github.com/en/rest/reference/actions#list-artifacts-for-a-repository
-curl_ "https://api.github.com/repos/${owner}/${repo}/actions/artifacts" > artifacts.json
+jq '.workflow_runs | sort_by(.run_number) | last' workflows.json > workflow.json
 
-artifacts_url=$(jq_ -r '.workflow_runs[0].artifacts_url' workflow.json)
+echo "Using $(jq_ -r '.html_url' workflow.json)"
 
-curl_ "${artifacts_url}" > artifact.json
+curl_ "$(jq_ -r '.artifacts_url' workflow.json)" > artifact.json
 
 
 mkdir -p _site/download
