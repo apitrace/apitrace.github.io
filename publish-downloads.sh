@@ -66,7 +66,7 @@ dl_ () {
 
     echo "Downloading ${archive_download_url}" 1>&2
     # XXX: Use -H 'Accept: application/octet-stream' ?
-    if ! curl -s --fail -L -H "Authorization: token $GITHUB_TOKEN" -z $name.zip -o .$name.zip ${archive_download_url}
+    if ! curl -sS --fail -L --retry 5 --retry-all-errors --retry-delay 2 -H "Authorization: token $GITHUB_TOKEN" -z $name.zip -o .$name.zip ${archive_download_url}
     then
         echo "error: failed to download ${archive_download_url}" 1>&2
         exit 1
