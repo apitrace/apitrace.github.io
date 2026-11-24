@@ -13,6 +13,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -40,6 +41,22 @@ jobs:
       - run: ./publish-downloads.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
+      # The artifact listing API is eventually consistent: deploy-pages sometimes
+      # fails with "Found 0 artifact(s)" right after a successful upload, and has
+      # no retry option of its own. So wait until the artifact is listed.
+      - name: Wait for artifact
+        run: |
+          for attempt in $(seq 1 30); do
+            count=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" \
+              --jq '[.artifacts[] | select(.name == "github-pages" and (.expired | not))] | length') || count=0
+            echo "Attempt $attempt: found $count github-pages artifact(s)"
+            if [ "$count" -gt 0 ]; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "::error::Artifact github-pages never became available"
+          exit 1
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
